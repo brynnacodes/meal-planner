@@ -10,11 +10,24 @@ import { Component } from '@angular/core';
       <li *ngFor="let meal of meals">{{meal.name}} <button (click)="editMeal(meal)">Edit meal</button></li>
     </ul>
     <hr>
-    <div>
+    <div *ngIf="selectedMeal" class="edit-meal">
+      <h2>Edit meal</h2>
       <h3>{{selectedMeal.name}}</h3>
-      <h3>Edit Meal</h3>
-      <label>Enter Meal Name:</label>
-      <input [(ngModel)]="selectedMeal.name">
+
+      <label>Enter meal name:</label>
+      <input [(ngModel)]="selectedMeal.name"><br>
+
+      <label>Enter meal details:</label>
+      <input [(ngModel)]="selectedMeal.details"><br>
+
+      <label>Enter meal calories:</label>
+      <input [(ngModel)]="selectedMeal.calories"><br>
+
+      <label>Enter meal day:</label>
+      <input [(ngModel)]="selectedMeal.day">
+      <button (click)="finishEditing()">Done</button>
+
+
     </div>
   </div>
   `
@@ -25,6 +38,7 @@ export class AppComponent {
   month: number = this.currentTime.getMonth() + 1;
   day: number = this.currentTime.getDate();
   year: number = this.currentTime.getFullYear();this;
+  selectedMeal = null;
 
   meals: Meal[] = [
     new Meal('lasagna', 'sausage, noodles, basil, marinara', 336, 'Thursday'),
@@ -32,10 +46,12 @@ export class AppComponent {
     new Meal('salad', 'lettuce, beets, carrots, goat cheese, vinagrette', 275, 'Thursday')
   ];
 
-  selectedMeal: Meal = this.meals[0];
-
   editMeal(clickedMeal) {
     this.selectedMeal = clickedMeal;
+  }
+
+  finishEditing() {
+    this.selectedMeal = null;
   }
 }
 

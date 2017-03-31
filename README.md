@@ -50,8 +50,8 @@ Specify what it takes to deploy your app.
   * All other other dependencies are installed by Ember and located in package.json
 
 2. Specs
-  * Spec 1: User can log a meal including a name, details, calories, and a day of the week.
-  * Spec 2: User can edit and delete meals.
+  * Spec 1: User can edit meals.
+  * Spec 2: User can log a meal including a name, details, calories, and a day of the week.
   * Spec 3: User can view all questions on the index/homepage route
   * Spec 5: Users can filter meals by calories
 

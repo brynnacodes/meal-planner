@@ -18,9 +18,7 @@ var utilities = require('gulp-util');
 var buildProduction = utilities.env.production;
 var del = require('del');
 var browserSync = require('browser-sync').create();
-var shell = require('gulp-shell');
-var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
+var shell = require('gulp-shell');var sourcemaps = require('gulp-sourcemaps');
 
 ////////////////////// TYPESCRIPT //////////////////////
 
@@ -61,12 +59,12 @@ gulp.task('bower', ['jsBower', 'cssBower']);
 
 ////////////////////// SASS //////////////////////
 
-gulp.task('sassBuild', function() {
-  return gulp.src(['resources/styles/*'])
+gulp.task('cssBuild', function() {
+  return gulp.src(['assets/styles/*'])
     .pipe(sourcemaps.init())
-    .pipe(sass())
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./build/css'));
+    .pipe(gulp.dest('./build/css'))
+    browserSync.reload();
 });
 
 ////////////////////// SERVER //////////////////////
@@ -81,7 +79,8 @@ gulp.task('serve', ['build'], function() {
   });
   gulp.watch(['resources/js/*.js'], ['jsBuild']); // vanilla js changes, reload.
   gulp.watch(['*.html'], ['htmlBuild']); // html changes, reload.
-  gulp.watch(['resources/styles/*.css', 'resources/styles/*.scss'], ['cssBuild']);      gulp.watch(['app/*.ts'], ['tsBuild']); // typescript files change, compile then reload.
+  gulp.watch(['assets/styles/*.css'], ['cssBuild']);
+  gulp.watch(['app/*.ts'], ['tsBuild']); // typescript files change, compile then reload.
 });
 
 gulp.task('jsBuild', function(){
@@ -92,9 +91,9 @@ gulp.task('htmlBuild', function(){
   browserSync.reload();
 });
 
-gulp.task('cssBuild', ['sassBuild'], function(){
-  browserSync.reload();
-});
+// gulp.task('cssBuild', ['sassBuild'], function(){
+//   browserSync.reload();
+// });
 
 gulp.task('tsBuild', ['ts'], function(){
   browserSync.reload();
@@ -105,5 +104,4 @@ gulp.task('tsBuild', ['ts'], function(){
 gulp.task('build', ['ts'], function(){
   // we can use the buildProduction environment variable here later.
   gulp.start('bower');
-  gulp.start('sassBuild');
 });

@@ -5,13 +5,19 @@ import { HealthinessPipe } from './healthiness.pipe';
 @Component({
   selector: 'meal-list',
   template: `
-  <button class ="btn" value="all" (click)="setDesiredHealthiness($event.target.value)">View all meals</button>
-  <button class ="btn" value="low" (click)="setDesiredHealthiness($event.target.value)">View meals over 400 calories</button>
-  <button class ="btn" value="high" (click)="setDesiredHealthiness($event.target.value)">View meals under 400 calories</button>
-
-  <ul>
-    <li *ngFor="let meal of childMealList | healthiness: desiredHealthiness">{{meal.name}} <button (click)="editButtonClicked(meal)">Edit meal</button></li>
-  </ul>
+  <div id="filter-buttons">
+    <button class ="btn" value="all" (click)="setDesiredHealthiness($event.target.value)">View all meals</button>
+    <button class ="btn" value="low" (click)="setDesiredHealthiness($event.target.value)">View meals over 500 calories</button>
+    <button class ="btn" value="high" (click)="setDesiredHealthiness($event.target.value)">View meals under 500 calories</button>
+  </div>
+  <hr>
+    <div *ngFor="let meal of childMealList | healthiness: desiredHealthiness">{{meal.name}} <button class="btn" (click)="editButtonClicked(meal)">Edit meal</button>
+      <ul>
+        <li>Calories: {{meal.calories}}</li>
+        <li>Details: {{meal.details}}</li>
+        <li>Eaten at: {{meal.time}}</li>
+      </ul>
+    </div>
   `
 })
 

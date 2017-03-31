@@ -4,20 +4,30 @@ import { Meal } from './meal.model';
 @Component({
   selector: 'new-meal',
   template: `
-    <h1>Add New Meal</h1>
+    <div id="new-meal-header">
+      <h1>Add New Meal</h1>
+    </div>
     <div class="new-meal-form">
-      <label>Enter meal name:</label>
-      <input #newName><br>
+      <div class="form-group">
+        <label>Enter meal name:</label>
+        <input #newName><br>
+      </div>
 
-      <label>Enter meal details:</label>
-      <input #newDetails><br>
+      <div class="form-group">
+        <label>Enter meal details:</label>
+        <input #newDetails><br>
+      </div>
 
-      <label>Enter meal calories:</label>
-      <input #newCalories><br>
+      <div class="form-group">
+        <label>Enter meal calories:</label>
+        <input #newCalories><br>
+      </div>
 
-      <label>Enter meal day:</label>
-      <input #newDay>
-      <button (click)="submitForm(newName.value, newDetails.value, newCalories.value, newDay.value); newName.value=''; newDetails.value=''; newCalories.value=''; newDay.value='';">Add meal</button>
+      <div class="form-group">
+        <label>Enter meal time:</label>
+        <input #newTime><br>
+      </div>
+      <button class="btn" (click)="submitForm(newName.value, newDetails.value, newCalories.value, newDay.value); newName.value=''; newDetails.value=''; newCalories.value=''; newTime.value='';">Add meal</button>
     <div>
   `
 })
@@ -25,8 +35,8 @@ import { Meal } from './meal.model';
 export class NewMealComponent {
   @Output() newMealSender = new EventEmitter();
 
-  submitForm(name: string, details: string, calories: number, day: string) {
-    var newMealToAdd: Meal = new Meal(name, details, calories, day);
+  submitForm(name: string, details: string, calories: number, time: string) {
+    var newMealToAdd: Meal = new Meal(name, details, calories, time);
     this.newMealSender.emit(newMealToAdd);
   }
 }

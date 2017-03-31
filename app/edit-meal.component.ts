@@ -19,7 +19,7 @@ import { Meal } from './meal.model';
 
       <label>Enter meal day:</label>
       <input [(ngModel)]="childSelectedMeal.day">
-      <button (click)="doneButtonClicked()">Done</button>
+      <button class="btn" (click)="doneButtonClicked()">Done</button>
     </div>
   `
 })

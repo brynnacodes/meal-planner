@@ -28,3 +28,8 @@ body {
 li {
   margin: 10px;
 }
+
+#new-meal-header {
+  text-align: center;
+  letter-spacing: 2px;
+}

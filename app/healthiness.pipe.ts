@@ -12,14 +12,14 @@ export class HealthinessPipe implements PipeTransform {
 
     if (desiredHealthiness === "high") {
       for (var i = 0; i < input.length; i++) {
-        if (input[i].calories < 400) {
+        if (input[i].calories < 500) {
           output.push(input[i]);
         }
       }
       return output;
     } else if (desiredHealthiness === "low") {
       for (var i = 0; i < input.length; i++) {
-        if (input[i].calories >= 400) {
+        if (input[i].calories >= 500) {
           output.push(input[i]);
         }
       }

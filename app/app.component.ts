@@ -6,11 +6,8 @@ import { Component } from '@angular/core';
   <div class="container">
     <h1>Meal Tracker</h1>
     <h3>Today's date: {{month}}/{{day}}/{{year}}</h3>
-    <ul> Meal
-      <li>Name: {{firstMeal.name}}</li>
-      <li>Details: {{firstMeal.details}}</li>
-      <li>Calories: {{firstMeal.calories}}</li>
-      <li>Day: {{firstMeal.day}}</li>
+    <ul>
+      <li *ngFor="let meal of meals">{{meal.name}}</li>
     </ul>
   </div>
   `
@@ -22,12 +19,11 @@ export class AppComponent {
   day: number = this.currentTime.getDate();
   year: number = this.currentTime.getFullYear();this;
 
-  firstMeal: Meal = {
-    name: 'lasagna',
-    details: 'sausage, noodles, basil, marinara',
-    calories: 336,
-    day: 'Thursday'
-  }
+  meals: Meal[] = [
+    new Meal('lasagna', 'sausage, noodles, basil, marinara', 336, 'Thursday'),
+    new Meal('lasagna', 'sausage, noodles, basil, marinara', 336, 'Thursday'),
+    new Meal('lasagna', 'sausage, noodles, basil, marinara', 336, 'Thursday')
+  ];
 }
 
   class Meal {

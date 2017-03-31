@@ -12,22 +12,19 @@ import { Meal } from './meal.model';
         <label>Enter meal name:</label>
         <input #newName><br>
       </div>
-
       <div class="form-group">
         <label>Enter meal details:</label>
         <input #newDetails><br>
       </div>
-
       <div class="form-group">
         <label>Enter meal calories:</label>
         <input #newCalories><br>
       </div>
-
       <div class="form-group">
         <label>Enter meal time:</label>
         <input #newTime><br>
       </div>
-      <button class="btn" (click)="submitForm(newName.value, newDetails.value, newCalories.value, newDay.value); newName.value=''; newDetails.value=''; newCalories.value=''; newTime.value='';">Add meal</button>
+      <button class="btn" (click)="submitForm(newName.value, newDetails.value, newCalories.value, newTime.value); newName.value=''; newDetails.value=''; newCalories.value=''; newTime.value='';">Add meal</button>
     <div>
   `
 })

@@ -26,10 +26,18 @@ export class AppComponent {
   selectedMeal = null;
 
   masterMealList: Meal[] = [
-    new Meal('lasagna', 'sausage, noodles, basil, marinara', 336, '12:00pm'),
-    new Meal('ice cream', 'mint chocolate chip', 300, '3:00pm'),
-    new Meal('salad', 'lettuce, beets, carrots, goat cheese, vinagrette', 275, '6:30pm')
+    new Meal('Bagel', 'seasame bagel with cream cheese and avocado', 336, '8:00am'),
+    new Meal('Rice bowl', 'chicken and vegetable stir fry over rice', 510, '1:00pm'),
+    new Meal('Salad', 'lettuce, beets, carrots, goat cheese, vinagrette', 275, '6:30pm')
   ];
+
+  // Oninit() {
+  //   totalCalories(masterMealList) {
+  //     for (var i = 0; i < masterMealList.length; i++) {
+  //       console.log(masterMealList[i]);
+  //     }
+  //   }
+  // }
 
   editMeal(clickedMeal) {
     this.selectedMeal = clickedMeal;

@@ -1,0 +1,30 @@
+body {
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+}
+
+#header {
+  height: 300px;
+  width: 100vw;
+  background-image: url("https://static.pexels.com/photos/349610/pexels-photo-349610.jpeg");
+  background-size: cover;
+}
+
+#title {
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.btn {
+  background-color: white;
+  color: green;
+  border: 1px solid grey;
+}
+
+#filter-buttons {
+  text-align: center;
+}
+
+li {
+  margin: 10px;
+}

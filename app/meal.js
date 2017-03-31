@@ -12,3 +12,4 @@ meals.push(new Meal('lasagna', 'sausage, noodles, basil, marinara', 336, 'Thursd
 meals.push(new Meal('ice cream', 'mint chocolate chip', 300, 'Thursday'));
 meals.push(new Meal('salad', 'lettuce, beets, carrots, goat cheese, vinagrette', 275, 'Thursday'));
 console.log(meals);
+//# sourceMappingURL=meal.js.map

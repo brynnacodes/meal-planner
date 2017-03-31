@@ -1,0 +1,17 @@
+{
+  "name": "meal-planner",
+  "description": "a meal tracker app",
+  "main": "",
+  "authors": [
+    "Brynna <brynna.mccarter@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

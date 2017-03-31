@@ -20,6 +20,8 @@ You will need the following things properly installed on your computer.
 
 ## Running / Development
 
+* `npm install`
+* `bower install`
 * `gulp build`
 * `gulp serve`
 * Visit your app at [http://localhost:3000].

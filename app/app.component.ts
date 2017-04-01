@@ -31,14 +31,6 @@ export class AppComponent {
     new Meal('Salad', 'lettuce, beets, carrots, goat cheese, vinagrette', 275, '6:30pm')
   ];
 
-  // Oninit() {
-  //   totalCalories(masterMealList) {
-  //     for (var i = 0; i < masterMealList.length; i++) {
-  //       console.log(masterMealList[i]);
-  //     }
-  //   }
-  // }
-
   editMeal(clickedMeal) {
     this.selectedMeal = clickedMeal;
   }

@@ -1,6 +1,6 @@
-# meal-planner
+# Meal Planner App
 
-A meal planner built with Angular2
+A meal tracking app built with Angular2 that allows users to log their daily meals and filter their meals by calories. 
 
 ## Prerequisites
 
@@ -11,37 +11,13 @@ You will need the following things properly installed on your computer.
 * [Bower](https://bower.io/)
 * [Gulp](https://gulpjs.com/)
 
-## Installation
+## Installation and Deployment
 
 * `git clone <repository-url>` this repository
-* `cd finders-keepers`
+* `cd meal-planner`
 * `npm install`
 * `bower install`
-
-## Running / Development
-
-* `npm install`
-* `bower install`
-* `gulp build`
 * `gulp serve`
-* Visit your app at [http://localhost:3000].
-
-### Building
-
-* `gulp build` (development)
-* `gulp build --production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-<!-- * [ember.js](http://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/) -->
 
 ## Planning
 
@@ -50,19 +26,22 @@ Specify what it takes to deploy your app.
   * All other other dependencies are installed by Ember and located in package.json
 
 2. Specs
-  * Spec 1: User can edit meals.
-  * Spec 2: User can log a meal including a name, details, calories, and a day of the week.
-  * Spec 3: User can view all questions on the index/homepage route
-  * Spec 5: Users can filter meals by calories
+  * Spec 1: User can view all meals.
+  * Spec 2: User can edit meals.
+  * Spec 3: User can log a meal including a name, details, calories, and time.
+  * Spec 4: Users can filter logged meals by calories.
 
 3. Integration
+  * Components are used to create display and behavior for listing meals, editing meals, and creating new meals.
+  * Pipe is used to filter meals by high or low healthiness based on calories.
 
 4. UX/UI
   * Develop custom style with css/Bootstrap
 
 5. Polish
   * Refactor and DRY up code where appropriate
-  * Make README (more) awesome!
+  * Improve README!
 
 6. Future Additions:
+  * Add functionality to view total daily calories.
   * Refactor for use with Firebase & Angular-Cli

@@ -9,6 +9,8 @@ import { Meal } from './meal.model';
     <div id="title">
       <h1>Meal Tracker</h1>
       <h3>Today is: {{month}}/{{day}}/{{year}}</h3>
+      <button class="btn" (click)="totalCalories()">Total calories</button>
+      <h3 id="total"></h3>
     </div>
     <meal-list [childMealList]="masterMealList" (clickSender)="editMeal($event)"></meal-list>
     <hr>
@@ -24,12 +26,7 @@ export class AppComponent {
   day: number = this.currentTime.getDate();
   year: number = this.currentTime.getFullYear();this;
   selectedMeal = null;
-
-  masterMealList: Meal[] = [
-    new Meal('Bagel', 'seasame bagel with cream cheese and avocado', 336, '8:00am'),
-    new Meal('Rice bowl', 'chicken and vegetable stir fry over rice', 510, '1:00pm'),
-    new Meal('Salad', 'lettuce, beets, carrots, goat cheese, vinagrette', 275, '6:30pm')
-  ];
+  masterMealList: Meal[] = [];
 
   editMeal(clickedMeal) {
     this.selectedMeal = clickedMeal;
@@ -41,5 +38,15 @@ export class AppComponent {
 
   addMeal(newMealFromChild: Meal) {
     this.masterMealList.push(newMealFromChild);
+  }
+  
+  totalCalories() {
+    var total: number = 0;
+    for (var i = 0; i < this.masterMealList.length; i++) {
+       total += parseInt(this.masterMealList[i].calories);
+    }
+
+    var totalNumber = total.toString();
+    document.getElementById("total").innerHTML = totalNumber;
   }
 }

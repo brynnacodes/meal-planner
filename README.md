@@ -1,6 +1,6 @@
 # Meal Planner App
 
-A meal tracking app built with Angular2 that allows users to log their daily meals and filter their meals by calories. 
+A meal tracking app built with Angular2 that allows users to log their daily meals and filter their meals by calories.
 
 ## Prerequisites
 
@@ -17,6 +17,7 @@ You will need the following things properly installed on your computer.
 * `cd meal-planner`
 * `npm install`
 * `bower install`
+* `gulp build`
 * `gulp serve`
 
 ## Planning
